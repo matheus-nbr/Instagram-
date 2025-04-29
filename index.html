@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+    <style>
+        body {
+            background-color: #fafafa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .login-box, .blocked-box {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 90%;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+        }
+        button {
+            width: 95%;
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .blocked-msg {
+            font-size: 18px;
+            color: #ed4956;
+            margin-top: 20px;
+        }
+        img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+    
+    <div class="login-box" id="loginBox">
+        <input type="text" id="username" placeholder="Telefone, nome de usuário ou e-mail">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="bloquearConta()">Entrar</button>
+    </div>
+
+    <div class="blocked-box" id="blockedBox" style="display: none;">
+        <h2>Conta Bloqueada</h2>
+        <div class="blocked-msg">
+            Detectamos atividade suspeita na sua conta.<br><br>
+            Clique abaixo para recuperar:
+        </div>
+        <button onclick="mostrarTrollagem()">Recuperar Conta</button>
+    </div>
+
+    <div class="blocked-box" id="trollBox" style="display: none;">
+        <h2>KKKK</h2>
+        <div class="blocked-msg">
+            Você foi trollado pelo Tripa!<br><br>
+            Melhor mudar essa senha aí, hein!
+        </div>
+    </div>
+
+    <audio id="alarme" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
+    <script>
+        function bloquearConta() {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('blockedBox').style.display = 'block';
+            document.getElementById('alarme').play();
+        }
+
+        function mostrarTrollagem() {
+            document.getElementById('blockedBox').style.display = 'none';
+            document.getElementById('trollBox').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
